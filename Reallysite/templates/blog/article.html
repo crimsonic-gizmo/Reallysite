@@ -1,0 +1,25 @@
+{% extends 'mysite/base.html' %}
+
+{% block content %}
+
+<main class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <h3 class="pb-4 font-italic">
+                {{ Article.title }}
+            </h3>
+            <p class="small text-muted text-right">{{ Article.created_at }} {{ Article.author }}</p>
+            <p>{{ Article.text }}</p>
+            </div>
+
+            <nav class="blog-pagination">
+                <a class="btn btn-outline-primary" href="#">古い記事</a>
+                <a class="btn btn-outline-primary disabled" href="#">新しい記事</a>
+            </nav>
+        </div>
+        {% include 'mysite/snippets/asidebar.html' %}
+
+    </div>
+</main>
+
+{% endblock %}
